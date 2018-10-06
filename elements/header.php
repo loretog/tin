@@ -33,6 +33,9 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link href="<?php echo SITE_URL ?>/assets/css/style.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="<?php echo SITE_URL ?>/vendor/jquery/jquery.min.js"></script>
 </head>
 
    <!--  # code...} -->

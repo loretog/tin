@@ -8,9 +8,6 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="<?php echo SITE_URL ?>/vendor/jquery/jquery.min.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo SITE_URL ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
 
