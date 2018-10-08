@@ -10,8 +10,8 @@ $parts_id = $_POST[ 'parts_id' ];
 
 
 $DB->query( "UPDATE parts SET title = '$title', number = '$number' WHERE parts_id = $parts_id" );
-$DB->query( "DELETE FROM columns WHERE part_id=$parts_id" );
-foreach( $_POST['column_name'] as $column_name) {
+//$DB->query( "DELETE FROM columns WHERE part_id=$parts_id" );
+foreach( $_POST['column_name_x'] as $column_name) {
 	if( $column_name ) {				
 		$DB->query( "INSERT INTO columns (part_id, title) VALUES( $parts_id, '$column_name' )" );
 	}

@@ -21,18 +21,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo SITE_URL ?>/dist/js/sb-admin-2.js"></script>
-    <script type="text/javascript">
-        jQuery(function($) {
-            $( ".add-column" ).click(function() {
-                $( ".parts-columns" ).append( "<div class='column-wrapper'><input type='text' name='column_name[]' class='form-control'><span class='remove-column'>Remove</span></div>" );
-
-                return false;
-            });
-            $( ".remove-column" ).click(function() {
-                $( this ).parent().remove();
-            });
-        });
-    </script>
+   
 </body>
 
 </html>
