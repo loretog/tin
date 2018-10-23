@@ -14,7 +14,6 @@
 	<input type="text" class="form-control" name="title" placeholder="title" value="<?php echo $part->title?>"><br>
 	<label>Number: </label>  
 	<input type="text" class="form-control" name="number" placeholder="number" value="<?php echo $part->number ?>"><br>
-
 	
 	<input type="submit" class="btn btn-primary" value="Update Parts">
 	
@@ -22,8 +21,6 @@
 
 	<br>
 	<br>
-	  
-
 
 	<div class="parts-columns">
 		<?php 
@@ -95,14 +92,31 @@
 		$( document ).on( 'click', '.edit-subcolumn', function() {
 			$this = $( this );
 			subcolumn_id = $this.data( 'column-id' );			
-
+			$title = prompt( "", "" );
 			$.ajax({
 				"type": "post",
-				"data": { "action": "remove_column", "column_id": subcolumn_id },
+				"data": { "action": "edit_subcolumn", "column_id": subcolumn_id, "title": $title },
 				"success": function( response ) {
-					console.log( response );
+					//console.log( response );
+					$this.html( $title );
 				}
 			});
+		});
+		$( document ).on( 'click', '.remove-subcolumn', function() {
+			$this = $( this );
+			subcolumn_id = $this.data( 'column-id' );			
+			if( confirm( "Are you sure you want to remove this sub-column?" ) ) {
+	 			$.ajax({
+					"type": "post",
+					"data": { "action": "remove_subcolumn", "column_id": subcolumn_id },
+					"success": function( response ) {
+						//console.log( response );
+						//$this.html( $title );						
+						if( response == "ok" )
+							$this.parent().remove();
+					}
+				});
+ 			}
 		});
 	});
 </script>
